@@ -1,3 +1,11 @@
+/*
+    Letter Tally:
+    This program will keep track of alphabetic letter's
+
+    Programed by Roger on 4/27/2023
+*/
+
+
 "use strict";
 
 const submitBtn = document.querySelector("button.sbmt");
