@@ -1,20 +1,16 @@
 /*
     Letter Tally:
     This program will keep track of alphabetic letter's
-
-    Programed by Roger on 4/27/2023
+    Programmed by Roger B on 4/27/2023
 */
-
 
 "use strict";
 
 const submitBtn = document.querySelector("button.sbmt");
 const inputString = document.querySelector("input.name");
 const wordContainer = document.querySelector("section.word-container")
-
-
 const ALPHABETIC_SIZE = 26;
-const aDecimalValue = 97;
+const DECIMAL_VALUE = 97; // equivalent character is 'a'
 
 /*
     Takes a string as a parameter
@@ -23,17 +19,18 @@ const aDecimalValue = 97;
     non-alphabetic letters, and case of letter.
 
     e.g. "abc"
-    [1, 1, 1, 0, 0 , 0, .....] size 26
+    [1, 1, 1, 0, 0 , 0, ....] size 26
 */
 function letterCounter(word) {
     const characterArr = new Array(26).fill(0);
     for (let index = 0; index < word.length; index++) {
         if (!isLetter(word.charAt(index))) {
-            throw error('every character is not a letter!');
+            alert('Every character is not a letter!');
+            return;
         } else {
             const charCode = word.toLowerCase().charCodeAt(index);
-            if (charCode >= aDecimalValue && charCode < aDecimalValue + ALPHABETIC_SIZE) {
-                characterArr[charCode - aDecimalValue]++;
+            if (charCode >= DECIMAL_VALUE && charCode < DECIMAL_VALUE + ALPHABETIC_SIZE) {
+                characterArr[charCode - DECIMAL_VALUE]++;
             }
         }
     }
@@ -54,7 +51,7 @@ function inventoryToString(characterArr) {
     for (let i = 0; i < characterArr.length; i++) {
         const count = characterArr[i];
         for (let j = 0; j < count; j++) {
-            result += String.fromCharCode(i + aDecimalValue);
+            result += String.fromCharCode(i + DECIMAL_VALUE);
         }
     }
     return result;
@@ -63,17 +60,16 @@ function inventoryToString(characterArr) {
 /*
     Take's a character as parameter
     and returns a boolean if a character is an alphabetic letter
-    from a-z, A-Z, . and ' ' white space using REGEX
+    from a-z, A-Z, . (period) and ' ' empty space using REGEX validation
 */
 function isLetter(char) {
     return /^[a-zA-Z .]$/.test(char);
 }
 
-function createDiv(inputString) {
+function createArticle(inputString) {
     const article = document.createElement("article");
     const result = inventoryToString(inputString);
     const inString = document.querySelector("input.name");
-
     article.innerHTML = `
         <article class="article">
             <div class="info-div">
@@ -94,11 +90,10 @@ function createDiv(inputString) {
 submitBtn.addEventListener("click", (event) => {
     let letterInventory = letterCounter(inputString.value);
     if (inputString.value === '') {
-        alert('please enter a word');
+        alert('Please enter a word');
         return;
     }
-    createDiv(letterInventory);
-
+    createArticle(letterInventory);
     inputString.value = "";
     inputString.focus();
     event.preventDefault();
