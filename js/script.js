@@ -73,13 +73,10 @@ function createArticle(inputString) {
     article.innerHTML = `
         <article class="article">
             <div class="info-div">
-                <p class="word-p">${"Array Inventory: [" + inputString + "]"}</p>
-            </div>
-            <div class="info-div">
                 <p class="word-p-2">${"Letter Tally: " + result}</p>
             </div>
             <div class="info-div">
-                <p class="word-p">${"Original input: " + inString.value}</p>
+                <p class="word-p">${"Original Input: " + inString.value}</p>
             </div>
         </article>
     `;
@@ -98,3 +95,9 @@ submitBtn.addEventListener("click", (event) => {
     inputString.focus();
     event.preventDefault();
 })
+
+/*
+    <div class="info-div">
+                <p class="word-p">${"Array Inventory: [" + inputString + "]"}</p>
+    </div>
+*/
