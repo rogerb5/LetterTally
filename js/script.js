@@ -76,7 +76,7 @@ function createArticle(inputString) {
                 <p class="word-p-2">${"Letter Tally: " + result}</p>
             </div>
             <div class="info-div">
-                <p class="word-p">${"Original input: " + inString.value}</p>
+                <p class="word-p">${"Original Input: " + inString.value}</p>
             </div>
         </article>
     `;
