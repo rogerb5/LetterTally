@@ -14,13 +14,39 @@
 <body>
 
     <main>
+        <!-- Form container -->
         <form>
             <h1>Letter Tally</h1>
-            <h4>A report of alphabetic letters</h4>
-            <label for="word1"></label>
+            <h4>A report of alphabetic letters!</h4>
+            <div class="option">
+                <label>Font Style</label>
+                <select name="typeface" title="typeface">
+                    <option value="Open Sans">Open Sans</option>
+                    <option value="Prompt">Prompt</option>
+                    <option value="Taviraj">Taviraj</option>
+                </select>
+            </div>
+            <fieldset class="radio-buttons">
+                <legend>Choose Theme</legend>
+                <div class="radio-button-div">
+                    <input type="radio" id="colorOne" name="color" value="colorOne">
+                    <label for="colorOne">Color One</label>
+                </div>
+                <div class="radio-button-div">
+                    <input type="radio" id="colorTwo" name="color" value="colorTwo">
+                    <label for="colorTwo">Color Two</label>
+                </div>
+                <div class="radio-button-div">
+                    <input type="radio" id="colorThree" name="color" value="colorThree">
+                    <label for="colorThree">Color Three</label>
+                </div>
+            </fieldset>
+            <label for="word1">Your Text:</label>
             <input type="text" name="word" class="name" placeholder="Enter input" required>
             <button class="sbmt">Enter</button>
         </form>
+
+        <!--Output parent container-->
         <section class="word-container">
             <h1>Outcome:</h1>
         </section>
@@ -28,6 +54,7 @@
     </main>
 
     <script src="js/script.js"></script>
+    <script src="js/ui.js"></script>
 </body>
 
 </html>
