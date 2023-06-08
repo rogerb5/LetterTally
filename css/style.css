@@ -16,7 +16,7 @@
 :root {
     ---primary-color: #222222;
     ---secondary-color: whitesmoke;
-    ---third-color: gold;
+    ---third-color: whitesmoke;
     --border-color: #575757;
     --input-padding: 0.7rem;
     --main-padding: 1rem;
@@ -37,6 +37,7 @@ main {
     display: flex;
     height: 100vh;
     font-family: 'Faune', sans-serif;
+    background-color: var(---primary-color);
 }
 
 /* Form Styling ********************************/
@@ -46,7 +47,7 @@ form {
     justify-content: space-around;
     padding: 4rem;
     width: 50%;
-    background-color: var(---primary-color);
+    border-right: 1px solid var(--border-color);
 }
 
 fieldset {
@@ -75,11 +76,9 @@ form button:hover {
 /* Output Parent Container */
 section.word-container {
     padding: var(--main-padding);
-    border: 2px solid var(---third-color);
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(---primary-color);
 }
 
 /* HTML element created with JavaScript styling */
@@ -97,11 +96,7 @@ div.info-div p {
 
 /* Radio Button Styling ***********************/
 input[type="radio"]:checked~label {
-    color: var(---third-color);
-}
-
-input[type="radio"]:checked {
-    background-color: var(---third-color);
+    color: goldenrod;
 }
 
 label {
@@ -115,10 +110,9 @@ label:hover {
 
 input[type="radio"] {
     appearance: none;
-    background-color: var(---primary-color);
     margin: 0;
     font: inherit;
-    color: currentColor;
+    color: var(---primary-color);
     width: 1.3em;
     height: 1.3em;
     border: 0.3em solid #AAAAAA;

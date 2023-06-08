@@ -13,13 +13,23 @@ function setFontFamily(event) {
     mainTag.style.fontFamily = event.target.value;
 }
 
+/*
+    Loops over all radio buttons
+    and for each of them add the change event listener
+    then change the background color of each radio button target value
+*/
 function setThemeColor() {
     radioButtons.forEach(btn => {
-
-    })
+        btn.addEventListener("change", (event) => {
+            mainTag.style.backgroundColor = event.target.style.backgroundColor;
+        });
+    });
 }
 
-//event listerners
+//event listeners
 fontTag.addEventListener("input", (event) => {
     setFontFamily(event);
 })
+
+// run on load
+setThemeColor();
