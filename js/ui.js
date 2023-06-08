@@ -15,8 +15,8 @@ function setFontFamily(event) {
 
 /*
     Loops over all radio buttons
-    and for each of them add the change event listener
-    then change the background color of each radio button target value
+    and adds the "change" event listener to each of them 
+    then sets the background color from a radio button target value
 */
 function setThemeColor() {
     radioButtons.forEach(btn => {
